@@ -7,11 +7,11 @@ body{
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100vh; /* Change from height to min-height */
+    min-height: 100vh;
     background-image: url('assets/gambar/bg-rumput.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 .score{
     text-align: center;
@@ -37,7 +37,7 @@ body{
     width: 2000px;
     position: absolute;
     left: 0;
-    animation: road 1.1s infinite linear;
+    animation: road 1s infinite linear;
 }
 #dino{
     width: 50px;
@@ -52,7 +52,7 @@ body{
     position: relative;
     top: 110px;
     left: 850px;
-    animation: cactus 1.1s infinite linear ;
+    animation: cactus 1s infinite linear ;
 }
 @keyframes cactus{
     0%{
