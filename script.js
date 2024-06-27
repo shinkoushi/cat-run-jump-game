@@ -9,10 +9,9 @@ let score = 0
 let highScore = localStorage.getItem("high-score") || 0;
 playerScoreTertinggi.innerHTML = `Score Tertinggi: ${highScore}`;
 
-let isGamePaused = false; // Add a flag to indicate whether the game is paused or not
-
+let isGamePaused = false; 
 let jumlahScore = () =>{
-    if (!isGamePaused) { // Only increment the score if the game is not paused
+    if (!isGamePaused) { 
         score++
         playerScore.innerHTML = `Score : ${score}`
         
@@ -26,10 +25,9 @@ let jumlahScore = () =>{
 function jump(){
   if(char.classList!= "animate"){
       char.classList.add("animate")
-      
-      const audioElement = new Audio('assets/audio/jump.mp3'); // Create the audioElement instance here
+      const audioElement = new Audio('assets/audio/jump.mp3'); 
       try {
-        audioElement.play(); // Play the audio file
+        audioElement.play(); 
       } catch (error) {
         console.error("Error playing audio:", error);
       }
@@ -49,9 +47,9 @@ const ifHitCactus = setInterval(function(){
       cactus.style.animation = "none"
       cactus.style.display = "none"
 
-      isGamePaused = true; // Set the game to paused when the modal is opened
+      isGamePaused = true; 
 
-      const audioElement = new Audio('assets/audio/game-over.mp3'); // Create the audioElement instance here
+      const audioElement = new Audio('assets/audio/game-over.mp3'); 
 
       Swal.fire({
           imageUrl: "assets/gambar/cry.png",
@@ -59,22 +57,22 @@ const ifHitCactus = setInterval(function(){
           imageHeight: 100,
           title: "KUCING KAMU NABRAK BATU🥺",
           text: "coba lagi ya!",
-          
           overflowY: 'auto',
+          allowOutsideClick: false,
           didOpen: () => {
             try {
-              audioElement.play(); // play the audio file
+              audioElement.play(); 
             } catch (error) {
               console.error("Error playing audio:", error);
             }
           },
           didClose: () => {
-            audioElement.pause(); // pause the audio when the modal is closed
-            audioElement.currentTime = 0; // reset the audio to the beginning
-            isGamePaused = false; // Set the game to unpaused when the modal is closed
+            audioElement.pause(); 
+            audioElement.currentTime = 0; 
+            isGamePaused = false;
           }
         }).then(() => {
-          location.reload(); // reload the page when the modal is closed
+          location.reload();
         });
   }
 })
