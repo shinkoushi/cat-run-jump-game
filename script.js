@@ -23,8 +23,9 @@ let jumlahScore = () =>{
 }
 
 function jump(){
-  if(char.classList!= "animate"){
+  if(char.classList != "animate"){
       char.classList.add("animate")
+      char.src = 'assets/gambar/cat-jump.png'; // Add this line
       const audioElement = new Audio('assets/audio/jump.mp3'); 
       try {
         audioElement.play(); 
@@ -34,7 +35,7 @@ function jump(){
   }
   setTimeout(function(){
       char.classList.remove("animate")
-    
+      char.src = 'assets/gambar/cat.png'; // Reset to initial image
   }, 500)
   let score = 0
   interval = setInterval(jumlahScore, 100)
